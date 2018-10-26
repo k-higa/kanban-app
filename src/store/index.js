@@ -6,7 +6,18 @@ import murations from './mutations'
 
 Vue.use(Vuex)
 
+const state = {
+  auth: {
+    token: null,
+    userId: null
+  },
+  board: {
+    lists: []
+  }
+}
+
 export default new Vuex.Store({
+  state,
   getters,
   actions,
   murations,
