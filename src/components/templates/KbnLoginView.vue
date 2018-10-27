@@ -6,22 +6,22 @@
 </template>
 
 <script>
-import KbnLoginForm from "@/components/molecules/KbnLoginForm.vue"
+import KbnLoginForm from '@/components/molecules/KbnLoginForm.vue'
 export default {
-  name: "KbnLoginView",
+  name: 'KbnLoginView',
   components: {
     KbnLoginForm
   },
   methods: {
-    handleLogin(authinfo) {
+    handleLogin (authinfo) {
       return this.$store
-        .dispatch("login", authinfo)
+        .dispatch('login', authinfo)
         .then(() => {
-          this.$router.push({ path: "/" })
+          this.$router.push({ path: '/' })
         })
         .cahtch(err => this.throwReject(err))
     },
-    throwReject(err) {
+    throwReject (err) {
       return Promise.reject(err)
     }
   }
@@ -34,5 +34,3 @@ export default {
   margin: auto;
 }
 </style>
-
-

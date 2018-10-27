@@ -3,5 +3,5 @@ import Router from 'vue-router'
 import routers from './routes'
 
 Vue.use(Router)
-
-export default new Router({ routers })
+const router = new Router({ routers })
+export default router

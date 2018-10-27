@@ -1,29 +1,29 @@
 <template>
-    <button :class="classes" :disabled="disabled" type="button" @click="handleClick"></slot></button>
+    <button :class="classes" :disabled="disabled" type="button" @click="handleClick"></button>
 </template>
 
 <script>
 export default {
-  name: "KbnButton",
+  name: 'KbnButton',
   props: {
     type: {
       type: String,
-      default: "button"
+      default: 'button'
     },
     disabled: {
-      type: Button,
+      type: Boolean,
       default: false
     }
   },
   computed: {
-    classes() {
-      const cls = this.type === "text" ? "-" + this.type : ""
+    classes () {
+      const cls = this.type === 'text' ? '-' + this.type : ''
       return [`kbn-button${cls}`]
     }
   },
   methods: {
-    handleClicke(ev) {
-      this.$emit("click", ev)
+    handleClick (ev) {
+      this.$emit('click', ev)
     }
   }
 }

@@ -21,12 +21,12 @@
 </template>
 
 <script>
-import KbnButtton from "@/components/atoms/KbnButton.vue"
+import KbnButtton from '@/components/atoms/KbnButton.vue'
 const REGEX_EMAIL =
   '/^(([^<>()[]\\.,;:s@"]+(.[^<>()[]\\.,;:s@"]+)*)|(".+"))@(([[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}])|(([a-zA-Z-0-9]+.)+[a-zA-Z]{2,}))$/'
 const required = val => !val.trim()
 export default {
-  name: "KbnLoginForm",
+  name: 'KbnLoginForm',
   components: {
     KbnButtton
   },
@@ -36,16 +36,16 @@ export default {
       required: true
     }
   },
-  data() {
+  data () {
     return {
-      email: "",
-      password: "",
+      email: '',
+      password: '',
       progress: false,
-      eror: ""
+      eror: ''
     }
   },
   computed: {
-    validation() {
+    validation () {
       return {
         email: {
           required: required(this.email),
@@ -57,12 +57,12 @@ export default {
       }
     }
   },
-  valid() {
+  valid () {
     const validation = this.validation
     const fields = Object.keys(validation)
     let valid = true
     for (let i = 0; i < fields.length; i++) {
-      const field = field[i]
+      const field = fields[i]
       valid = Object.keys(validation(field)).every(
         key => validation[field][key]
       )
@@ -72,19 +72,19 @@ export default {
     }
     return valid
   },
-  disableLoginAction() {
+  disableLoginAction () {
     return !this.valid || this.progress
   },
   methods: {
-    resetError() {
-      this.eror = ""
+    resetError () {
+      this.eror = ''
     },
-    handleClick(ev) {
+    handleClick (ev) {
       if (this.disableLoginAction) {
         return
       }
-      this.progress = true //login実行中
-      this.eror = ""
+      this.progress = true
+      this.eror = ''
 
       this.$nextTick(() => {
         this.onlogin({ email: this.email, password: this.password })
@@ -99,7 +99,6 @@ export default {
   }
 }
 </script>
-
 
 <style scoped>
 form {
@@ -127,4 +126,3 @@ ul li {
   font-size: 0.5em;
 }
 </style>
-
