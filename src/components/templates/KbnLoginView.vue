@@ -1,7 +1,7 @@
 <template>
 <div class="login-view">
     <h1>Kanban App</h1>
-    <KbnLoginForm :onlogin="handleLogin"></KbnLoginForm>
+    <KbnLoginForm :onlogin="handleLogin"/>
 </div>
 </template>
 
