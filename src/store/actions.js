@@ -1,8 +1,12 @@
+import { AUth } from '../api'
+import {AUTH_LOGIN} from '../store/mutation-types'
 
 export default {
-  login: ({ commit }) => {
-    // TODO
-    throw new Error('login action should be implemented')
+  login: ({commit}, authInfo) => {
+    return AUth.login(authInfo)
+      .then(({token, userId}) => {
+        commit(AUTH_LOGIN, {token, userId})
+      }).catch(err => { throw err })
   },
   fetchList: ({ commit }) => {
     // TODO

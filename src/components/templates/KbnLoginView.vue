@@ -19,7 +19,7 @@ export default {
         .then(() => {
           this.$router.push({ path: '/' })
         })
-        .cahtch(err => this.throwReject(err))
+        .catch(err => this.throwReject(err))
     },
     throwReject (err) {
       return Promise.reject(err)

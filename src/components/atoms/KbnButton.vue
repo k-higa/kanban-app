@@ -1,5 +1,5 @@
 <template>
-    <button :class="classes" :disabled="disabled" type="button" @click="handleClick"></button>
+    <button :class="classes" :disabled="disabled" type="button" @click="handleClick"><slot /></button>
 </template>
 
 <script>
@@ -31,7 +31,7 @@ export default {
 
 <style scoped>
 .kbn-button {
-  padding: 6em 1.3em;
+  padding: .6em 1.3em;
 }
 .kbn-button-text {
   border: none;
