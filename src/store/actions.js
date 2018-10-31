@@ -1,11 +1,11 @@
 import { AUth } from '../api'
-import {AUTH_LOGIN} from '../store/mutation-types'
+import * as type from '../store/mutation-types'
 
 export default {
   login: ({commit}, authInfo) => {
     return AUth.login(authInfo)
       .then(({token, userId}) => {
-        commit(AUTH_LOGIN, {token, userId})
+        commit(type.AUTH_LOGIN, {token, userId})
       }).catch(err => { throw err })
   },
   fetchList: ({ commit }) => {
